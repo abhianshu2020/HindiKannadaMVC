@@ -25,6 +25,19 @@ namespace KannadaWebApp.Controllers
         }
 
         [HttpGet]
+        public PartialViewResult Pronouns()
+        {
+            IEnumerable<LanguageCard> pronouns = repo.GetAllPronouns();
+            return PartialView("Fruits", pronouns);
+        }
+
+        public PartialViewResult QuestionWords()
+        {
+            IEnumerable<LanguageCard> questionWords = repo.GetAllQuestionWords();
+            return PartialView("Fruits", questionWords);
+        }
+
+        [HttpGet]
         public PartialViewResult Fruits()
         {
             List<LanguageCard> cards = repo.GetAllCards();

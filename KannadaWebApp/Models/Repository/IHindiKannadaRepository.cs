@@ -8,5 +8,9 @@ namespace KannadaWebApp.Models.Repository
     public interface IHindiKannadaRepository
     {
         List<LanguageCard> GetAllCards();
+
+        IEnumerable<LanguageCard> GetAllPronouns();
+
+        IEnumerable<LanguageCard> GetAllQuestionWords();
     }
 }

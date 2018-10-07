@@ -18,14 +18,21 @@
         @*<li><a href="#">Menu Menu 2</a></li>*@
         @*<li><a href="#">M3</a></li>*@
         <li>
-            @Ajax.ActionLink("Menu Menu 2", "BodyParts", new AjaxOptions
+            @Ajax.ActionLink("Pronouns", "Pronouns", new AjaxOptions
             {
                 HttpMethod = "GET",
                 UpdateTargetId = "words",
                 InsertionMode = InsertionMode.Replace
             })
         </li>
-        <li><a href="#">Menu 4</a></li>
+        <li>
+            @Ajax.ActionLink("Question Words", "QuestionWords", new AjaxOptions
+    {
+        HttpMethod = "GET",
+        UpdateTargetId = "words",
+        InsertionMode = InsertionMode.Replace
+    })
+        </li>
         <li><a href="#">MenuMenu 5</a></li>
         <li><a href="#">Random Menu 5</a></li>
     </ul>

@@ -72,5 +72,63 @@ namespace KannadaWebApp.Models.Repository
             return languageCards;
 
         }
+
+        public IEnumerable<LanguageCard> GetAllPronouns()
+        {
+            List<LanguageCard> pronouns = new List<LanguageCard>();
+
+            LanguageCard pronoun1 = new LanguageCard();
+            pronoun1.HindiText = "main";
+            pronoun1.KannadaText = "nanu";
+
+            LanguageCard pronoun2 = new LanguageCard();
+            pronoun2.HindiText = "hum";
+            pronoun2.KannadaText = "navu";
+
+            LanguageCard pronoun3 = new LanguageCard();
+            pronoun3.HindiText = "mera";
+            pronoun3.KannadaText = "nanna";
+
+            LanguageCard pronoun4 = new LanguageCard();
+            pronoun4.HindiText = "humara";
+            pronoun4.KannadaText = "namma";
+
+            LanguageCard pronoun5 = new LanguageCard();
+            pronoun5.HindiText = "mujhko";
+            pronoun5.KannadaText = "nanage";
+
+            LanguageCard pronoun6 = new LanguageCard();
+            pronoun6.HindiText = "humko";
+            pronoun6.KannadaText = "namage";
+
+            pronouns.Add(pronoun1);
+            pronouns.Add(pronoun2);
+            pronouns.Add(pronoun3);
+            pronouns.Add(pronoun4);
+            pronouns.Add(pronoun5);
+            pronouns.Add(pronoun6);
+
+            return pronouns;
+        }
+
+        public IEnumerable<LanguageCard> GetAllQuestionWords()
+        {
+            List<LanguageCard> questionWords = new List<LanguageCard>()
+            {
+                new LanguageCard
+                {
+                    HindiText = "kya",
+                    KannadaText = "enu"
+                },
+                new LanguageCard
+                {
+                    HindiText = "kyun",
+                    KannadaText = "yake"
+                }
+            };
+
+            return questionWords;
+
+        }
     }
 }
