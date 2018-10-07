@@ -1,0 +1,18 @@
+﻿@model IEnumerable<KannadaWebApp.Models.LanguageCard>
+
+@foreach (var item in Model)
+{
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                @item.HindiText
+            </div>
+            <div class="flip-card-back">
+                @item.KannadaText
+            </div>
+        </div>
+    </div>
+}
+
+

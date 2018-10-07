@@ -1,0 +1,32 @@
+﻿@*@model IEnumerable<KannadaWebApp.Models.LanguageCard>*@
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link href="~/Content/main.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/ActiveClassSwitcher.js"></script>
+<style>
+</style>
+
+<div class="index-container">
+    <div class="sidebar" @*style="background:red;"*@>
+        @Html.Partial("~/Views/Patial Views/_SideMenu.cshtml")
+    </div>
+        <!-- partial view content will be inserted here -->
+    <div class="cards" id="words" @*style="background:green;"*@>
+        @Html.Partial("~/Views/Home/Fruits.cshtml")
+    </div>
+    </div>
+
+    <script>
+                    //$(document).ready(){
+                    //    $('.sidebar ul li a').click(function () {
+                    //        //Removes the active class from any <li> elements
+                    //        $('a.active').removeClass('active');
+                    //        //Adds it to the current element
+                    //        $(this).addClass('active');
+                    //}
+    </script>

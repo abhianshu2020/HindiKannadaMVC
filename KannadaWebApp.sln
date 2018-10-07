@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KannadaWebApp", "KannadaWebApp\KannadaWebApp.csproj", "{BE3E0920-3E47-4D23-82C7-587BE33EECF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE3E0920-3E47-4D23-82C7-587BE33EECF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE3E0920-3E47-4D23-82C7-587BE33EECF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE3E0920-3E47-4D23-82C7-587BE33EECF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE3E0920-3E47-4D23-82C7-587BE33EECF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56B8C161-7872-4293-99EA-BAEF29DA44F6}
+	EndGlobalSection
+EndGlobal
