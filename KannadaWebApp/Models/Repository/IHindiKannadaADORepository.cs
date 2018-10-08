@@ -7,6 +7,13 @@ namespace KannadaWebApp.Models.Repository
 {
     public interface IHindiKannadaADORepository
     {
-        IEnumerable<LanguageCard> GetAllWords();
+        IEnumerable<LanguageCard> GetAllPronouns();
+        IEnumerable<LanguageCard> GetAllCommonVerbs();
+        IEnumerable<LanguageCard> GetAllGeneralWords();
+        IEnumerable<LanguageCard> GetAllQuestionWords();
+        IEnumerable<LanguageCard> GetAllNumbers();
+        IEnumerable<LanguageCard> GetAllRelationships();
+        IEnumerable<LanguageCard> GetAllColors();
+        IEnumerable<LanguageCard> GetAllFruitsAndVegetables();
     }
 }
