@@ -11,46 +11,25 @@ namespace KannadaWebApp.Controllers
     public class HomeController : Controller
     {
         IHindiKannadaRepository repo = new HindiKannadaRepository();
+        IHindiKannadaADORepository ADORepo = new HindiKannadaADORepository();
         public ActionResult Index()
         {
-            List<LanguageCard> cards = repo.GetAllCards();
+            IEnumerable<LanguageCard> cards = ShuffleCards();
             return View(cards);
         }
 
         [HttpGet]
-        public PartialViewResult Verbs()
+        public PartialViewResult GetRandomCards()
         {
-            List<LanguageCard> cards = repo.GetAllCards();
-            return PartialView("Fruits", cards);
+            IEnumerable<LanguageCard> cards = ShuffleCards();
+            return PartialView("~/Views/Partial Views/_Card.cshtml", cards);
         }
 
         [HttpGet]
-        public PartialViewResult Pronouns()
+        public PartialViewResult GetCards(string category)
         {
-            IEnumerable<LanguageCard> pronouns = repo.GetAllPronouns();
-            return PartialView("Fruits", pronouns);
-        }
-
-        public PartialViewResult QuestionWords()
-        {
-            IEnumerable<LanguageCard> questionWords = repo.GetAllQuestionWords();
-            return PartialView("Fruits", questionWords);
-        }
-
-        [HttpGet]
-        public PartialViewResult Fruits()
-        {
-            List<LanguageCard> cards = repo.GetAllCards();
-            cards.RemoveAt(1);
-            return PartialView("Fruits", cards);
-        }
-
-        [HttpGet]
-        public PartialViewResult BodyParts()
-        {
-            List<LanguageCard> cards = repo.GetAllCards();
-            cards.RemoveAt(2);
-            return PartialView("Fruits", cards);
+            IEnumerable<LanguageCard> cards = ADORepo.GetCardsFrom(category);
+            return PartialView("~/Views/Partial Views/_Card.cshtml", cards);
         }
 
         public ActionResult About()
@@ -65,6 +44,14 @@ namespace KannadaWebApp.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        private IEnumerable<LanguageCard> ShuffleCards()
+        {
+            Random random = new Random();
+            IEnumerable<LanguageCard> cards = ADORepo.GetAllWords();
+            cards = cards.OrderBy(x => random.Next()).ToList();
+            return cards;
         }
     }
 }

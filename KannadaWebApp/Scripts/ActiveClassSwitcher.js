@@ -9,20 +9,13 @@
     //});
 
 $(document).ready(function () {
+    $('#randomWords').addClass('active');
     $('.sidebar ul li a').click(function () {
         $('a.active').removeClass('active');
         $(this).addClass('active')
     })
 
-    //$('.sidebar ul li a').on("click", function () {
-    //    $.ajax({
-    //        url: "/Home/Fruits",
-    //        type: "GET",
-    //    })
-    //    .done(function (partialViewResult) {
-    //        $("#refTable").html(partialViewResult);
-    //    });
-    //});
+    
 
 });
 

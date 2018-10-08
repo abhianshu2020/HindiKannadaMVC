@@ -1,0 +1,82 @@
+﻿
+
+<ul>
+    @*<li><a href="#" class="active">Menu 1</a></li>*@
+    <li>
+        @Ajax.ActionLink("Random", "GetRandomCards", null, new AjaxOptions
+   {
+       HttpMethod = "GET",
+       UpdateTargetId = "words",
+       InsertionMode = InsertionMode.Replace
+   }, new { @id = "randomWords" })
+    </li>
+    <li>
+        @Ajax.ActionLink("Pronouns", "GetCards", new { category = "Pronouns" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+    <li>
+        @Ajax.ActionLink("Common Verbs", "GetCards", new { category = "Common Verbs" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+    @*<li><a href="#">Menu Menu 2</a></li>*@
+    @*<li><a href="#">M3</a></li>*@
+    <li>
+        @Ajax.ActionLink("General Words", "GetCards", new { category = "General Words" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+    <li>
+        @Ajax.ActionLink("Question Words", "GetCards", new { category = "Question Words" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+
+    <li>
+        @Ajax.ActionLink("Numbers", "GetCards", new { category = "Numbers" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+
+    <li>
+        @Ajax.ActionLink("Relationships", "GetCards", new { category = "Relationships" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+
+    <li>
+        @Ajax.ActionLink("Colors", "GetCards", new { category = "Colors" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+    <li>
+        @Ajax.ActionLink("Fruits & Vegetables", "GetCards", new { category = "Fruits & Vegetables" }, new AjaxOptions
+        {
+            HttpMethod = "GET",
+            UpdateTargetId = "words",
+            InsertionMode = InsertionMode.Replace
+        })
+    </li>
+</ul>
