@@ -38,29 +38,53 @@ namespace KannadaWebApp.Models.Repository
 
         public IEnumerable<LanguageCard> GetAllWords()
         {
+            List<LanguageCard> languageCards = new List<LanguageCard>();
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = ConfigurationManager.ConnectionStrings["GearHost"].ConnectionString;
             string sqlGet = "SELECT * FROM hindiKannadaWords";
 
             SqlCommand command = new SqlCommand(sqlGet, conn);
-            conn.Open();
-            SqlDataReader reader = command.ExecuteReader();
-            List<LanguageCard> languageCards = new List<LanguageCard>();
-            while (reader.Read())
+            try
             {
-                LanguageCard card = new LanguageCard();
-                card.CardId = Convert.ToInt16(reader[0].ToString());
-                card.HindiText = reader[1].ToString();
-                card.KannadaText = reader[2].ToString();
-                languageCards.Add(card);
+
+                conn.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    LanguageCard card = new LanguageCard();
+                    card.CardId = Convert.ToInt16(reader[0].ToString());
+                    card.HindiText = reader[1].ToString();
+                    card.KannadaText = reader[2].ToString();
+                    languageCards.Add(card);
+                }
+                reader.Close();
             }
-            reader.Close();
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
             return languageCards;
         }
 
-        public IEnumerable<LanguageCard> GetAllCommonVerbs()
+        public IEnumerable<string> GetAllCategories()
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["GearHost"].ConnectionString;
+            string sqlGet = "SELECT category FROM categories";
+
+            SqlCommand command = new SqlCommand(sqlGet, conn);
+            conn.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            List<string> categories = new List<string>();
+            while (reader.Read())
+            {
+                string category = reader[0].ToString();
+                
+                categories.Add(category);
+            }
+            reader.Close();
+            return categories;
         }
 
         public IEnumerable<LanguageCard> GetAllFruitsAndVegetables()

@@ -9,7 +9,7 @@ namespace KannadaWebApp.Models.Repository
     {
         IEnumerable<LanguageCard> GetCardsFrom(string category);
         IEnumerable<LanguageCard> GetAllPronouns();
-        IEnumerable<LanguageCard> GetAllCommonVerbs();
+        IEnumerable<string> GetAllCategories();
         IEnumerable<LanguageCard> GetAllGeneralWords();
         IEnumerable<LanguageCard> GetAllQuestionWords();
         IEnumerable<LanguageCard> GetAllNumbers();

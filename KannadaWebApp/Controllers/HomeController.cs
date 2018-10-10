@@ -53,5 +53,7 @@ namespace KannadaWebApp.Controllers
             cards = cards.OrderBy(x => random.Next()).ToList();
             return cards;
         }
+
+      
     }
 }

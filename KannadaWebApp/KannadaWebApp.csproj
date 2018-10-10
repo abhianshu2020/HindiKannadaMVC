@@ -143,10 +143,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LanguageCard.cs" />
+    <Compile Include="Models\LanguageCardDTO.cs" />
     <Compile Include="Models\Repository\IHindiKannadaADORepository.cs" />
     <Compile Include="Models\Repository\HindiKannadaADORepository.cs" />
     <Compile Include="Models\Repository\HindiKannadaRepository.cs" />
@@ -180,7 +182,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -197,6 +201,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Partial Views\_Card.cshtml" />
     <Content Include="Views\Home\Fruits.cshtml" />
+    <Content Include="Views\Language\AddWords.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
