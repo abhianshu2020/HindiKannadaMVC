@@ -1,25 +1,39 @@
 ﻿@model KannadaWebApp.Models.LanguageCardDTO
 
 @{
-    ViewBag.Title = "AddWords";
+                /**/
+
+                ViewBag.Title = "AddWords";
 }
 
 <h2>AddWords</h2>
 
-@Html.LabelFor(x => x.WordCategory)
-@Html.DropDownListFor(x => x.WordCategory, Model.categoriesForDropdown, "Select Category", new { @class = "form-control" })
+@using (Ajax.BeginForm("SaveLanguagePair", "Language", new AjaxOptions { HttpMethod = "POST", OnSuccess = "showNotification" }))
+{
 
-@Html.LabelFor(x => x.HindiText)
-@Html.EditorFor(x => x.HindiText, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.LabelFor(x => x.WordCategory)
+    @Html.DropDownListFor(x => x.WordCategory, Model.categoriesForDropdown, "Select Category", new { @class = "form-control" })
 
-@Html.LabelFor(x => x.KannadaText)
-@Html.EditorFor(x => x.KannadaText, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.LabelFor(x => x.HindiText)
+    @Html.EditorFor(x => x.HindiText, new { htmlAttributes = new { @class = "form-control" } })
 
-@Html.LabelFor(x => x.SentenceCategory)
-@Html.DropDownListFor(x => x.SentenceCategory, Model.categoriesForDropdown, "Select Category", new { @class = "form-control" })
+    @Html.LabelFor(x => x.KannadaText)
+    @Html.EditorFor(x => x.KannadaText, new { htmlAttributes = new { @class = "form-control" } })
 
-@Html.LabelFor(x => x.HindiText)
-@Html.EditorFor(x => x.HindiText, new { htmlAttributes = new { @class = "form-control" } })
+    <input type="submit" value="Save Word Pair" class="btn btn-success" />
+}
 
-@Html.LabelFor(x => x.KannadaText)
-@Html.EditorFor(x => x.KannadaText, new { htmlAttributes = new { @class = "form-control" } })
+@using (Ajax.BeginForm("SaveLanguagePair", "Language", new AjaxOptions { HttpMethod = "POST", OnSuccess = "showNotification" }))
+{
+
+    @Html.LabelFor(x => x.SentenceCategory)
+    @Html.DropDownListFor(x => x.SentenceCategory, Model.categoriesForDropdown, "Select Category", new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.HindiText)
+    @Html.EditorFor(x => x.HindiText, new { htmlAttributes = new { @class = "form-control" } })
+
+    @Html.LabelFor(x => x.KannadaText)
+    @Html.EditorFor(x => x.KannadaText, new { htmlAttributes = new { @class = "form-control" } })
+
+    <input type="submit" value="Save Sentence Pair" class="btn btn-success" />
+}

@@ -87,9 +87,23 @@ namespace KannadaWebApp.Models.Repository
             return categories;
         }
 
-        public IEnumerable<LanguageCard> GetAllFruitsAndVegetables()
+        public int SaveLanguagePair(LanguageCardDTO languagePair)
         {
-            throw new NotImplementedException();
+            int count = 0;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["GearHost"].ConnectionString;
+            string sqlGet = "spAddWords";
+
+            SqlCommand command = new SqlCommand(sqlGet, conn);
+            command.CommandType = System.Data.CommandType.StoredProcedure;
+
+            command.Parameters.AddWithValue("@category", languagePair.WordCategory);
+            command.Parameters.AddWithValue("@hindiWord", languagePair.HindiText);
+            command.Parameters.AddWithValue("@kannadaWord", languagePair.KannadaText);
+            
+            conn.Open();
+            count = command.ExecuteNonQuery();
+            return count;
         }
 
         public IEnumerable<LanguageCard> GetAllGeneralWords()

@@ -22,6 +22,7 @@ namespace KannadaWebApp.Controllers
 
         public ActionResult SaveLanguagePair(LanguageCardDTO languageCardDTO)
         {
+            int isInserted = ADORepo.SaveLanguagePair(languageCardDTO);
             return PartialView();
         }
 

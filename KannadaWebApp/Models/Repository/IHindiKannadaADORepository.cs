@@ -15,6 +15,6 @@ namespace KannadaWebApp.Models.Repository
         IEnumerable<LanguageCard> GetAllNumbers();
         IEnumerable<LanguageCard> GetAllRelationships();
         IEnumerable<LanguageCard> GetAllWords();
-        IEnumerable<LanguageCard> GetAllFruitsAndVegetables();
+        int SaveLanguagePair(LanguageCardDTO languagePair);
     }
 }
